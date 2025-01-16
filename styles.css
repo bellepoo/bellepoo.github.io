@@ -1,5 +1,4 @@
- /* General Styling */
- body {
+body {
     background: url('junglemoving.gif') no-repeat center center fixed;
     background-size: cover;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -8,7 +7,6 @@
     color: #333;
 }
 
-/* Title Page Styles */
 
 #title-page {
 background-image: url('titlepage.jpeg'); 
@@ -33,7 +31,7 @@ opacity: 0;
 transform: scale(0.8);
 pointer-events: none;
 }
-/* Bigger and more engaging Play Button */
+
 #play-button {
 width: 250px;
 height: 100px;
@@ -42,23 +40,23 @@ font-weight: bold;
 color: #338d54;
 background-color: #ffff45;  
 border: none;
-border-radius: 50px;  /* Smooth, rounded edges */
+border-radius: 50px; 
 cursor: pointer;
 box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 font-family: 'Luckiest Guy', sans-serif;
 }
 
-/* Hover effect */
+
 #play-button:hover {
-transform: scale(1.1);  /* Slightly larger on hover */
+transform: scale(1.1);  
 box-shadow: 0 12px 25px rgba(255, 234, 150, 0.5);
-background-color: #51ff6b;  /* Lighter orange on hover */
+background-color: #51ff6b;  
 }
 
-/* Click effect */
+
 #play-button:active {
-transform: scale(0.95);  /* Slightly smaller when clicked */
+transform: scale(0.95);  
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -80,7 +78,7 @@ button:hover {
 transform: scale(1.1);
 box-shadow: 0 0 20px #7FFF00;
 }
-/* Pulsing effect */
+
 @keyframes pulse {
 0% { transform: scale(1); }
 50% { transform: scale(1.05); }
@@ -91,9 +89,9 @@ box-shadow: 0 0 20px #7FFF00;
 animation: pulse 2s infinite;
 }
 
-/* Context Section Styles */
+
 #context {
-display: none; /* Initially hidden */
+display: none;
 width: 100%;
 height: 100%;
 background: #f4f4f4;
@@ -102,7 +100,7 @@ box-sizing: border-box;
 }
 
 #context.active {
-display: block; /* Display only when activated */
+display: block; 
 }
 #container {
     display: flex;
@@ -114,19 +112,18 @@ display: block; /* Display only when activated */
     padding: 50px;
 }
 
-/* Style for the title */
 #title {
-font-family: 'Luckiest Guy', sans-serif; /* Use the fun font */
-font-size: 6rem; /* Adjust as needed */
+font-family: 'Luckiest Guy', sans-serif; 
+font-size: 6rem; 
 font-weight: bold;
-color: rgb(0, 255, 64); /* Inner text color */
--webkit-text-stroke: 5px rgb(68, 52, 34); /* Brown border around text */
+color: rgb(0, 255, 64); 
+-webkit-text-stroke: 5px rgb(68, 52, 34);
 text-align: center;
 position: relative;
-animation: moveAround 3s infinite ease-in-out; /* Add movement animation */
+animation: moveAround 3s infinite ease-in-out; 
 }
 
-/* Keyframes for title movement */
+
 @keyframes moveAround {
 0% {
 transform: translate(0, 0);
@@ -158,9 +155,9 @@ button {
 }
 
 button:hover {
-    transform: scale(1.1);  /* Slightly larger on hover */
+    transform: scale(1.1); 
     box-shadow: 0 12px 25px rgba(255, 234, 150, 0.5);
-    background-color: #51ff6b;  /* Lighter orange on hover */
+    background-color: #51ff6b;
     }
 
 .fade-in {
@@ -171,7 +168,7 @@ button:hover {
     display: none;
 }
 
-/* Progress Bar */
+
 #progress-bar-container {
     width: 80%;
     height: 15px;
@@ -190,7 +187,7 @@ button:hover {
     border-radius: 10px;
 }
 
-/* Gorilla Animation */
+
 #gorilla {
     width: 300px;
     animation: bounce 2s infinite;
@@ -205,7 +202,7 @@ button:hover {
     }
 }
 
-/* Interactive Speech Bubble */
+
 #speech-bubble {
     position: relative;
     max-width: 80%;
@@ -215,7 +212,7 @@ button:hover {
     border: 2px solid #ddd;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;  /* Center the content inside the bubble */
+    text-align: center; 
     font-size: 1.2em;
     line-height: 1.5;
     color: #333;
@@ -224,14 +221,14 @@ button:hover {
 #speech-bubble:after {
     content: '';
     position: absolute;
-    bottom: -20px; /* Position below the speech bubble */
-    left: 50%; /* Center horizontally */
+    bottom: -20px; 
+    left: 50%; 
     transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #f4f4f4; /* Match the speech bubble color */
+    border-top: 20px solid #f4f4f4;
 }
 
 /* Typing Effect */
@@ -244,7 +241,7 @@ button:hover {
     }
 }
 
-/* Fade-in for Speech Bubble */
+
 @keyframes fadeInSpeech {
     from {
         opacity: 0;
@@ -254,7 +251,7 @@ button:hover {
     }
 }
 
-/* Glowing Button */
+
 #next-button {
     background-color: #ffff45;
     color: #338d54;
@@ -271,14 +268,14 @@ button:hover {
     box-shadow: 0 0 25px rgba(255, 255, 0, 0.9);
 }
 
-/* Jungle Background Animation */
+
 #learning-page {
     display: none;
     flex-direction: column;
-    align-items: center;  /* Centers the content vertically */
-    justify-content: center;  /* Centers the content horizontally */
-    text-align: center;  /* Ensures text is centered */
-    height: 100vh;  /* Make sure it takes up the full viewport height */
+    align-items: center; 
+    justify-content: center;  
+    text-align: center;  
+    height: 100vh;  
 }
 @keyframes backgroundShift {
     0% {
@@ -294,13 +291,13 @@ button:hover {
 
 
 .correct-match {
-background-color: #d4edda; /* Light green */
-border: 2px solid #28a745; /* Green border */
+background-color: #d4edda; 
+border: 2px solid #28a745; 
 }
 
 .wrong-match {
-background-color: #f8d7da; /* Light red */
-border: 2px solid #dc3545; /* Red border */
+background-color: #f8d7da;
+border: 2px solid #dc3545; 
 animation: shake 0.3s ease-in-out;
 }
 
@@ -313,17 +310,17 @@ animation: shake 0.3s ease-in-out;
 
 .drag-drop-container {
 display: flex;
-flex-direction: column; /* Stack containers vertically */
+flex-direction: column; 
 align-items: center;
-gap: 20px; /* Add space between sections */
+gap: 20px; 
 }
 
 .terms-container, .definitions-container {
-width: 100%; /* Make containers full width */
-padding: 10px; /* Add some padding for spacing */
-background: rgba(255, 255, 255, 0.9); /* Optional background for better visibility */
-border-radius: 10px; /* Rounded corners */
-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for definition */
+width: 100%; 
+padding: 10px; 
+background: rgba(255, 255, 255, 0.9); 
+border-radius: 10px; 
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .terms-container h3, .definitions-container h3 {
@@ -359,20 +356,20 @@ border-color: #4caf50;
 background-color: #e8f5e9;
 }
 .draggable, .drop-zone {
-width: 200px; /* Adjust this size as needed */
-height: 50px; /* Ensure both have the same height */
-line-height: 50px; /* Center-align text vertically */
-text-align: center; /* Center-align text horizontally */
-background-color: #ffffff; /* Ensure consistent styling */
-border: 2px solid #ccc; /* Matching borders */
-border-radius: 8px; /* Rounded corners */
+width: 200px; 
+height: 50px; 
+line-height: 50px; 
+text-align: center; 
+background-color: #ffffff; 
+border: 2px solid #ccc;
+border-radius: 8px;
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 .correct-match {
 animation: lightUp 0.5s ease-in-out;
-background-color: #d4edda; /* Light green for correct match */
-border-color: #28a745; /* Green border */
-box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.6); /* Glow effect */
+background-color: #d4edda; 
+border-color: #28a745; 
+box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.6); 
 }
 
 /* Keyframe animation for the light-up effect */
@@ -411,7 +408,7 @@ transform: scale(1);
 display: block 
 }
 .typewriter h2 {
-overflow: hidden; /* Ensures the content is not revealed until the animation */
+overflow: hidden; 
 color: rgb(0, 255, 64); /* Inner text color */
 -webkit-text-stroke: 1px rgb(68, 52, 34);
 border-right: .15em solid orange; /* The typwriter cursor */
@@ -483,7 +480,7 @@ opacity: 1;
     font-size: 16px;
 }
 
-/* Smooth fade transition */
+
 #true-false-quiz, #mcq-quiz {
     transition: opacity 0.5s ease-in-out;
 }
@@ -493,7 +490,7 @@ opacity: 1;
     pointer-events: none;
 }
 
-/* General MCQ Quiz Container Styling */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -501,49 +498,49 @@ opacity: 1;
     justify-content: flex-start;
     width: 800px;
     min-height: 500px;
-    margin: 50px auto; /* Reduced from 100px to 50px */
+    margin: 50px auto; 
     padding: 20px;
     background-color: transparent;
 }
 
-/* Header Container (White Box at the Top) */
+
 .header-container {
     width: 100%;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff; 
     border-radius: 15px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); 
     padding: 20px;
     text-align: center;
-    margin-bottom: 20px; /* Space between header and options */
+    margin-bottom: 20px; 
 }
 
-/* Heading Styling */
+
 .header-container h2 {
     margin: 0;
     font-size: 24px;
     color: #333;
 }
 
-/* Question Text Styling */
+
 .header-container .question-text {
     margin-top: 10px;
     font-size: 18px;
     color: #555;
 }
 
-/* Options Styling */
+
 .options {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between buttons */
-    width: 100%; /* Stretch options to the container's width */
+    gap: 15px; 
+    width: 100%; 
     align-items: center;
 }
 
 .options button {
     width: 80%;
     padding: 15px;
-    background-color: #ffeb3b; /* Yellow background */
+    background-color: #ffeb3b;
     border: none;
     border-radius: 25px;
     font-size: 16px;
@@ -552,11 +549,11 @@ opacity: 1;
     transition: background-color 0.3s ease;
 }
 
-/* Button Hover Effect */
+
 .options button:hover {
-    background-color: #ffd600; /* Darker yellow on hover */
+    background-color: #ffd600; 
 }
-/* Answer Cards */
+
 .answer-cards {
     display: flex;
     gap: 15px;
@@ -577,20 +574,20 @@ opacity: 1;
     transform: scale(1.1);
 }
 
-/* Blanks for Dropping Cards */
+
 .blank {
     display: inline-block;
-    width: 150px;  /* Increase width */
-    height: 50px;  /* Increase height */
+    width: 150px;  
+    height: 50px;  
     border-bottom: 2px solid #333;
-    margin: 0 10px;  /* Adjust margin for better spacing */
+    margin: 0 10px;  
     text-align: center;
     font-weight: bold;
-    font-size: 18px;  /* Adjust font size */
-    padding: 10px 20px;  /* Add padding inside the blanks */
-    box-sizing: border-box;  /* Include padding in the element's size */
-}
-/* Closing Page Styling */
+    font-size: 18px; 
+    padding: 10px 20px; 
+    box-sizing: border-box; 
+
+
 #closing-page {
     text-align: center;
     padding: 40px;
@@ -604,8 +601,8 @@ opacity: 1;
 .congratulations {
     font-size: 32px;
     font-weight: bold;
-    color: #4caf50; /* Green color for success */
-    animation: bounce 1s ease infinite; /* Add animation */
+    color: #4caf50; 
+    animation: bounce 1s ease infinite; 
 }
 
 .message {
@@ -615,7 +612,6 @@ opacity: 1;
     font-weight: normal;
 }
 
-/* Play Again Button */
 button {
     margin-top: 30px;
     padding: 15px 30px;
@@ -630,7 +626,7 @@ button:hover {
     background-color: #ffd600;
 }
 
-/* Animation for Closing Page */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -640,7 +636,7 @@ button:hover {
     }
 }
 
-/* Animation for the congratulations text */
+
 @keyframes bounce {
     0% {
         transform: translateY(0);
@@ -668,65 +664,64 @@ button:hover {
     }
 }
 
-/* Apply Animation to the h2 */
 #prepare-for-quiz h2 {
-    animation: whirlIn 1.5s ease-out; /* Adjust duration as needed */
+    animation: whirlIn 1.5s ease-out; 
     font-size: 28px;
     text-align: center;
 }
-/* Base Style for All Animals */
+
+
 .animal {
     position: absolute;
-    width: 150px; /* Adjust size */
+    width: 150px; 
     height: auto;
     opacity: 0.9;
-    pointer-events: none; /* Prevents clicking */
+    pointer-events: none; 
     animation-timing-function: linear;
 }
 
-/* Monkey Swinging Across the Screen */
+
 .monkey {
-    width: 300px; /* Increased size from 150px to 300px */
-    top: 10%;
+    width: 300px;
     left: -200px;
     animation: monkeyMove 10s infinite;
 }
 
-/* Tiger Walking at the Bottom */
+
 .tiger {
     bottom: 0;
     left: -300px;
-    width: 300px; /* Increased size from 150px to 300px */
+    width: 300px; 
     height: auto;
     opacity: 0.9;
     pointer-events: none;
     animation: tigerWalk 15s infinite;
 }
 
-/* Monkey Swing Animation */
+
 @keyframes monkeyMove {
     0% { left: -200px; transform: rotate(0deg); }
     50% { top: 15%; transform: rotate(10deg); }
     100% { left: 110%; transform: rotate(-10deg); }
 }
 
-/* Tiger Walking Animation */
+
 @keyframes tigerWalk {
     0% { left: -300px; }
     100% { left: 110%; }
 }
 
-/* Snake Slithering Diagonally */
+
 .snake {
-    position: absolute;  /* Ensure it moves across the screen */
-    top: -100px;         /* Start slightly off the top */
-    left: -200px;        /* Start slightly off the left */
-    width: 200px;        /* Adjust size if needed */
+    position: absolute;  
+    top: -100px;        
+    left: -200px;       
+    width: 200px;       
     animation: snakeSlitherDiagonal 10s linear infinite;
-    z-index: 3;          /* Ensure it appears above background elements */
+    z-index: 3;         
 }
 
-/* Diagonal Slithering Animation */
+
 @keyframes snakeSlitherDiagonal {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -746,7 +741,8 @@ button:hover {
 }
 
 .tiger, .monkey, .parrot {
-    pointer-events: none; /* Makes them non-clickable */
+    pointer-events: none; 
 }
 
 
+}
