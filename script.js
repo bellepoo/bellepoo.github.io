@@ -11,7 +11,7 @@ document.getElementById('play-button').addEventListener('click', () => {
     container.style.display = 'none';
 
     setTimeout(() => {
-        titlePage.style.display = 'none'; 
+        titlePage.style.display = 'none'; // Ensure title page is gone
         container.style.display = 'block'; // Bring container back when needed
         contextPage.classList.add('active');
     }, 1000); // Match CSS transition duration
@@ -47,11 +47,11 @@ dropZones.forEach(dropZone => {
         if (draggedTerm === dropMatch) {
             dropZone.textContent = draggedItem.textContent; 
             dropZone.classList.add('correct-match');
-            draggedItem.style.opacity = 0.5; 
-            draggedItem.draggable = false; 
+            draggedItem.style.opacity = 0.5; // Disable further dragging of this term
+            draggedItem.draggable = false; // Make it undraggable
             completedMatches++;
 
-
+            // Check if all matches are completed
             if (completedMatches === dropZones.length) {
                 setTimeout(() => {
                     alert('Great job! You got all of them right!');
@@ -62,9 +62,9 @@ dropZones.forEach(dropZone => {
                 }, 1000); 
             }
         } else {
-          
-            dropZone.classList.add('wrong-match'); 
-            setTimeout(() => dropZone.classList.remove('wrong-match'), 1000); 
+            // Incorrect match
+            dropZone.classList.add('wrong-match'); // Add error styling
+            setTimeout(() => dropZone.classList.remove('wrong-match'), 1000); // Remove after 1s
         }
 
         dropZone.classList.remove('active');
@@ -129,7 +129,7 @@ function nextLearningPage() {
 }
 
 
-
+// Typing animation for the text
 function typeText(text, element) {
     let index = 0;
     element.textContent = '';  // Clear the text initially
@@ -157,7 +157,7 @@ function typeText(text, element) {
             const quizElement = document.getElementById('drag-drop-activity');
             const prepareElement = document.getElementById('prepare-for-quiz');
             
-           
+            // Add the wipe-out transition to the prepare-for-quiz content
             prepareElement.classList.add('wipe-transition');
             
             // After the wipe-out transition completes (1s), hide the current content and show the next content
@@ -194,11 +194,12 @@ function typeText(text, element) {
                 }
             });
         
-         
+            // If all items are correctly matched
             if (correctMatches === dropZones.length) {
                 setTimeout(() => {
                     alert('Great job! You got all of them right!');
         
+                    // Trigger the wipe-out transition after the alert is closed
                     triggerWipeTransition(showTrueFalseQuiz);
                 }, 500);
             }
@@ -209,10 +210,10 @@ function typeText(text, element) {
         function showTrueFalseQuiz() {
             const trueFalseSection = document.getElementById('true-false-quiz');
         
-      
+            // Show the next section
             trueFalseSection.style.display = 'block';
         
-           
+            // Optional fade-in effect for a smooth entry
             trueFalseSection.classList.add('fade-in-wipe');
         }
         
@@ -242,7 +243,7 @@ function typeText(text, element) {
         
             if (isTrueSelected === correctAnswer) {
                 alert("Correct!");
-              
+                // Hide True/False Quiz and Show MCQ Quiz
                 document.getElementById('true-false-quiz').style.display = 'none';
                 document.getElementById('mcq-quiz-container').style.display = 'flex';
             } else {
@@ -250,14 +251,14 @@ function typeText(text, element) {
             }
         }
         
-    
+        // MCQ Answer Check
 function checkMCQAnswer(selectedOption) {
-    const correctAnswer = 'C'; 
+    const correctAnswer = 'C'; // Correct answer is "Cleaning your room"
 
     if (selectedOption === correctAnswer) {
         alert("Correct! Generative AI can't clean your room.");
         
-
+        // Transition to the Fill-in-the-Blanks quiz
         document.getElementById('mcq-quiz-container').style.display = 'none';
         document.getElementById('fitb-quiz-container').style.display = 'block';
     } else {
@@ -265,6 +266,7 @@ function checkMCQAnswer(selectedOption) {
     }
 }
 
+// Drag and Drop Functions
 function allowDrop(event) {
     event.preventDefault();
 }
@@ -280,7 +282,7 @@ function drop(event) {
     event.target.setAttribute("data-answer", data);
 }
 
-
+// Check Fill-in-the-Blanks Answer
 function checkFITBAnswer() {
     const blanks = document.querySelectorAll(".blank");
     const correctAnswers = ["inaccurate", "creativity", "harmful"];
@@ -292,7 +294,7 @@ function checkFITBAnswer() {
 
     if (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers)) {
         alert("Great job! You filled in the blanks correctly! 🎉");
- 
+   // Transition to the closing page
    document.getElementById('fitb-quiz-container').style.display = 'none';
    document.getElementById('closing-page').style.display = 'block';
 } else {

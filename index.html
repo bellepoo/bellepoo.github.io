@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape the Jungle - Learn & Quiz</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
     
@@ -19,7 +19,6 @@
     </div>
     <div id="container">
 
-        <!-- Context Before Learning -->
         <section id="context">
             <div class="typewriter">
                 <h2>Oh no! You woke up in a jungle!</h2>
@@ -29,7 +28,6 @@
         </section>
 
 
-<!-- Learning Section -->
 <section id="learning-page" class="fade-in">
     <div id="progress-bar-container">
         <div id="progress-bar"></div>
@@ -38,8 +36,8 @@
     <div id="gorilla-container">
         <img id="gorilla" src="boxinggorilla.gif" alt="Gorilla">
         <div id="speech-bubble">
-            <h2 id="learning-title"></h2> <!-- Placeholder for the title -->
-            <p id="learning-content"></p> <!-- Placeholder for the content -->
+            <h2 id="learning-title"></h2>
+            <p id="learning-content"></p> 
         </div>
     </div>
 
@@ -58,7 +56,7 @@
             <h2>Match the AI Bots to Their Functions!</h2>
             </div>
             <div class="drag-drop-container">
-                <!-- Terms Section -->
+        
                 <div class="terms-container">
                     <h3>Terms</h3>
 
@@ -69,7 +67,7 @@
                     </div>
                 </div>
             
-                <!-- Definitions Section -->
+              
                 <div class="definitions-container">
                     <h3>Definitions</h3>
                     <div class="definitions">
@@ -93,18 +91,17 @@
         
     </div>
 
-    <!-- Multiple Choice Question (Initially Hidden) -->
-<!-- Multiple Choice Quiz Container -->
+
 <div id="mcq-quiz-container" class="container" style="display: none;">
-    <!-- White Container for Header and Question -->
+    
     <div class="header-container">
-        <!-- Heading -->
+
         <h2>Multiple Choice Question</h2>
-        <!-- Question Text -->
+   
         <p class="question-text">Which of the following is NOT a use of Generative AI?</p>
     </div>
 
-    <!-- Answer Options -->
+
     <div class="options">
         <button onclick="checkMCQAnswer('A')">A. Creating digital art</button>
         <button onclick="checkMCQAnswer('B')">B. Generating text for chatbots</button>
@@ -113,14 +110,14 @@
     </div>
 </div>
 
-<!-- Fill in the Blanks Quiz Container (Initially Hidden) -->
+
 <div id="fitb-quiz-container" class="container" style="display: none;">
     <div class="header-container">
         <h2>Fill in the Blanks!</h2>
         <p>Generative AI, while powerful, has its limitations. It can sometimes produce <span class="blank" ondrop="drop(event)" ondragover="allowDrop(event)"></span> content due to learning from existing data that may not always be reliable. Additionally, Generative AI lacks true <span class="blank" ondrop="drop(event)" ondragover="allowDrop(event)"></span> and generates content based on patterns, not original thought. Misuse of Generative AI can result in <span class="blank" ondrop="drop(event)" ondragover="allowDrop(event)"></span>content, so it is crucial to use it responsibly.</p>
     </div>
 
-    <!-- Answer Cards -->
+   
     <div class="answer-cards">
         <div class="card" draggable="true" ondragstart="drag(event)" id="creativity">creativity</div>
         <div class="card" draggable="true" ondragstart="drag(event)" id="inaccurate">inaccurate</div>
@@ -130,7 +127,7 @@
     <button onclick="checkFITBAnswer()">Submit Answer</button>
 </div>
 
-<!-- Closing Page (After Successfully Completing the Quiz) -->
+
 <div id="closing-page" class="container" style="display: none;">
     <div class="header-container">
         <h2 class="congratulations">Congratulations! You've Successfully Escaped the Jungle! 🎉</h2>
@@ -140,6 +137,6 @@
 </div>
 
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+    <script src="script.js"></script> 
 </body>
 </html>
