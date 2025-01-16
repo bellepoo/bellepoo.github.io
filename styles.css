@@ -1,0 +1,752 @@
+ /* General Styling */
+ body {
+    background: url('junglemoving.gif') no-repeat center center fixed;
+    background-size: cover;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Title Page Styles */
+
+#title-page {
+background-image: url('titlepage.jpeg'); 
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: white;
+transition: opacity 1s ease, transform 1s ease;
+}
+
+#title-page.hidden {
+opacity: 0;
+transform: scale(0.8);
+pointer-events: none;
+}
+/* Bigger and more engaging Play Button */
+#play-button {
+width: 250px;
+height: 100px;
+font-size: 4rem;
+font-weight: bold;
+color: #338d54;
+background-color: #ffff45;  
+border: none;
+border-radius: 50px;  /* Smooth, rounded edges */
+cursor: pointer;
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+font-family: 'Luckiest Guy', sans-serif;
+}
+
+/* Hover effect */
+#play-button:hover {
+transform: scale(1.1);  /* Slightly larger on hover */
+box-shadow: 0 12px 25px rgba(255, 234, 150, 0.5);
+background-color: #51ff6b;  /* Lighter orange on hover */
+}
+
+/* Click effect */
+#play-button:active {
+transform: scale(0.95);  /* Slightly smaller when clicked */
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+button {
+padding: 15px 30px;
+font-size: 1.5rem;
+font-weight: bold;
+color: white;
+background-color: #32CD32;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+margin-top: 40px;
+}
+
+button:hover {
+transform: scale(1.1);
+box-shadow: 0 0 20px #7FFF00;
+}
+/* Pulsing effect */
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+
+#play-button {
+animation: pulse 2s infinite;
+}
+
+/* Context Section Styles */
+#context {
+display: none; /* Initially hidden */
+width: 100%;
+height: 100%;
+background: #f4f4f4;
+padding: 20px;
+box-sizing: border-box;
+}
+
+#context.active {
+display: block; /* Display only when activated */
+}
+#container {
+    display: flex;
+    width: 960px;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    padding: 50px;
+}
+
+/* Style for the title */
+#title {
+font-family: 'Luckiest Guy', sans-serif; /* Use the fun font */
+font-size: 6rem; /* Adjust as needed */
+font-weight: bold;
+color: rgb(0, 255, 64); /* Inner text color */
+-webkit-text-stroke: 5px rgb(68, 52, 34); /* Brown border around text */
+text-align: center;
+position: relative;
+animation: moveAround 3s infinite ease-in-out; /* Add movement animation */
+}
+
+/* Keyframes for title movement */
+@keyframes moveAround {
+0% {
+transform: translate(0, 0);
+}
+25% {
+transform: translate(10px, -10px); /* Slight movement */
+}
+50% {
+transform: translate(-10px, 10px); /* Opposite movement */
+}
+75% {
+transform: translate(5px, -5px); /* Small adjustment */
+}
+100% {
+transform: translate(0, 0); /* Return to original position */
+}
+}
+
+
+button {
+    color: #338d54;
+    background-color: #ffff45;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);  /* Slightly larger on hover */
+    box-shadow: 0 12px 25px rgba(255, 234, 150, 0.5);
+    background-color: #51ff6b;  /* Lighter orange on hover */
+    }
+
+.fade-in {
+    animation: fadeIn 1s;
+}
+
+#learning-page, #quiz {
+    display: none;
+}
+
+/* Progress Bar */
+#progress-bar-container {
+    width: 80%;
+    height: 15px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #51ff6b;
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Gorilla Animation */
+#gorilla {
+    width: 300px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Interactive Speech Bubble */
+#speech-bubble {
+    position: relative;
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 15px 20px;
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;  /* Center the content inside the bubble */
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #333;
+}
+
+#speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Position below the speech bubble */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f4f4f4; /* Match the speech bubble color */
+}
+
+/* Typing Effect */
+@keyframes typingEffect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Fade-in for Speech Bubble */
+@keyframes fadeInSpeech {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Glowing Button */
+#next-button {
+    background-color: #ffff45;
+    color: #338d54;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+#next-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0.9);
+}
+
+/* Jungle Background Animation */
+#learning-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;  /* Centers the content vertically */
+    justify-content: center;  /* Centers the content horizontally */
+    text-align: center;  /* Ensures text is centered */
+    height: 100vh;  /* Make sure it takes up the full viewport height */
+}
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.correct-match {
+background-color: #d4edda; /* Light green */
+border: 2px solid #28a745; /* Green border */
+}
+
+.wrong-match {
+background-color: #f8d7da; /* Light red */
+border: 2px solid #dc3545; /* Red border */
+animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+0%, 100% { transform: translateX(0); }
+25% { transform: translateX(-5px); }
+50% { transform: translateX(5px); }
+75% { transform: translateX(-5px); }
+}
+
+.drag-drop-container {
+display: flex;
+flex-direction: column; /* Stack containers vertically */
+align-items: center;
+gap: 20px; /* Add space between sections */
+}
+
+.terms-container, .definitions-container {
+width: 100%; /* Make containers full width */
+padding: 10px; /* Add some padding for spacing */
+background: rgba(255, 255, 255, 0.9); /* Optional background for better visibility */
+border-radius: 10px; /* Rounded corners */
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for definition */
+}
+
+.terms-container h3, .definitions-container h3 {
+text-align: center;
+margin-bottom: 10px;
+font-size: 1.2em;
+color: #4caf50;
+}
+
+
+.draggable {
+padding: 10px 20px;
+background-color: #4caf50;
+color: rgb(0, 0, 0);
+border-radius: 5px;
+cursor: grab;
+text-align: center;
+}
+
+.drop-zone {
+padding: 40px;
+border: 2px dashed #ccc;
+border-radius: 5px;
+min-height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #f9f9f9;
+}
+
+.drop-zone.active {
+border-color: #4caf50;
+background-color: #e8f5e9;
+}
+.draggable, .drop-zone {
+width: 200px; /* Adjust this size as needed */
+height: 50px; /* Ensure both have the same height */
+line-height: 50px; /* Center-align text vertically */
+text-align: center; /* Center-align text horizontally */
+background-color: #ffffff; /* Ensure consistent styling */
+border: 2px solid #ccc; /* Matching borders */
+border-radius: 8px; /* Rounded corners */
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.correct-match {
+animation: lightUp 0.5s ease-in-out;
+background-color: #d4edda; /* Light green for correct match */
+border-color: #28a745; /* Green border */
+box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.6); /* Glow effect */
+}
+
+/* Keyframe animation for the light-up effect */
+@keyframes lightUp {
+from {
+background-color: #f4f4f4;
+box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+to {
+background-color: #d4edda;
+box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.6);
+}
+}
+.terms, .definitions {
+display: flex;
+justify-content: space-around;
+margin: 20px 0;
+}
+
+@keyframes keyAppear {
+0% {
+opacity: 0;
+transform: scale(0.5);
+}
+50% {
+opacity: 1;
+transform: scale(1.2);
+}
+100% {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+#container {
+display: block 
+}
+.typewriter h2 {
+overflow: hidden; /* Ensures the content is not revealed until the animation */
+color: rgb(0, 255, 64); /* Inner text color */
+-webkit-text-stroke: 1px rgb(68, 52, 34);
+border-right: .15em solid orange; /* The typwriter cursor */
+white-space: nowrap; /* Keeps the content on a single line */
+margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+letter-spacing: .15em; /* Adjust as needed */
+animation: 
+typing 3.5s steps(40, end),
+blink-caret .75s step-end infinite;
+font-family: 'Luckiest Guy', sans-serif;
+}
+
+/* The typing effect */
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: orange; }
+}
+/* Wipe Transition Effect */
+.wipe-transition {
+animation: wipeEffect 1s forwards;
+}
+
+@keyframes wipeEffect {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-100%);
+}
+}
+
+.fade-in-wipe {
+animation: fadeInWipe 1s forwards;
+}
+
+@keyframes fadeInWipe {
+0% {
+transform: translateX(100%);
+opacity: 0;
+}
+100% {
+transform: translateX(0);
+opacity: 1;
+}
+}
+#true-false-quiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+#true-false-quiz button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Smooth fade transition */
+#true-false-quiz, #mcq-quiz {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* General MCQ Quiz Container Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 800px;
+    min-height: 500px;
+    margin: 50px auto; /* Reduced from 100px to 50px */
+    padding: 20px;
+    background-color: transparent;
+}
+
+/* Header Container (White Box at the Top) */
+.header-container {
+    width: 100%;
+    background-color: #ffffff; /* White background */
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Space between header and options */
+}
+
+/* Heading Styling */
+.header-container h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Question Text Styling */
+.header-container .question-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Options Styling */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between buttons */
+    width: 100%; /* Stretch options to the container's width */
+    align-items: center;
+}
+
+.options button {
+    width: 80%;
+    padding: 15px;
+    background-color: #ffeb3b; /* Yellow background */
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.options button:hover {
+    background-color: #ffd600; /* Darker yellow on hover */
+}
+/* Answer Cards */
+.answer-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 10px 20px;
+    background-color: #ffeb3b;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: grab;
+    transition: transform 0.2s;
+}
+
+.card:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+/* Blanks for Dropping Cards */
+.blank {
+    display: inline-block;
+    width: 150px;  /* Increase width */
+    height: 50px;  /* Increase height */
+    border-bottom: 2px solid #333;
+    margin: 0 10px;  /* Adjust margin for better spacing */
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;  /* Adjust font size */
+    padding: 10px 20px;  /* Add padding inside the blanks */
+    box-sizing: border-box;  /* Include padding in the element's size */
+}
+/* Closing Page Styling */
+#closing-page {
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.congratulations {
+    font-size: 32px;
+    font-weight: bold;
+    color: #4caf50; /* Green color for success */
+    animation: bounce 1s ease infinite; /* Add animation */
+}
+
+.message {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+    font-weight: normal;
+}
+
+/* Play Again Button */
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #ffeb3b;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffd600;
+}
+
+/* Animation for Closing Page */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for the congratulations text */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* Whirl In Animation */
+@keyframes whirlIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-360deg) scale(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: rotate(-180deg) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Apply Animation to the h2 */
+#prepare-for-quiz h2 {
+    animation: whirlIn 1.5s ease-out; /* Adjust duration as needed */
+    font-size: 28px;
+    text-align: center;
+}
+/* Base Style for All Animals */
+.animal {
+    position: absolute;
+    width: 150px; /* Adjust size */
+    height: auto;
+    opacity: 0.9;
+    pointer-events: none; /* Prevents clicking */
+    animation-timing-function: linear;
+}
+
+/* Monkey Swinging Across the Screen */
+.monkey {
+    width: 300px; /* Increased size from 150px to 300px */
+    top: 10%;
+    left: -200px;
+    animation: monkeyMove 10s infinite;
+}
+
+/* Tiger Walking at the Bottom */
+.tiger {
+    bottom: 0;
+    left: -300px;
+    width: 300px; /* Increased size from 150px to 300px */
+    height: auto;
+    opacity: 0.9;
+    pointer-events: none;
+    animation: tigerWalk 15s infinite;
+}
+
+/* Monkey Swing Animation */
+@keyframes monkeyMove {
+    0% { left: -200px; transform: rotate(0deg); }
+    50% { top: 15%; transform: rotate(10deg); }
+    100% { left: 110%; transform: rotate(-10deg); }
+}
+
+/* Tiger Walking Animation */
+@keyframes tigerWalk {
+    0% { left: -300px; }
+    100% { left: 110%; }
+}
+
+/* Snake Slithering Diagonally */
+.snake {
+    position: absolute;  /* Ensure it moves across the screen */
+    top: -100px;         /* Start slightly off the top */
+    left: -200px;        /* Start slightly off the left */
+    width: 200px;        /* Adjust size if needed */
+    animation: snakeSlitherDiagonal 10s linear infinite;
+    z-index: 3;          /* Ensure it appears above background elements */
+}
+
+/* Diagonal Slithering Animation */
+@keyframes snakeSlitherDiagonal {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(25vw, 25vh) rotate(10deg);
+    }
+    50% {
+        transform: translate(50vw, 50vh) rotate(-10deg);
+    }
+    75% {
+        transform: translate(75vw, 75vh) rotate(5deg);
+    }
+    100% {
+        transform: translate(100vw, 100vh) rotate(0deg);
+    }
+}
+
+.tiger, .monkey, .parrot {
+    pointer-events: none; /* Makes them non-clickable */
+}
+
+

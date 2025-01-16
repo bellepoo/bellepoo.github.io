@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape the Jungle - Learn & Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    
+    <div id="title-page">
+        <h1 id="title">Escape the Jungle!</h1>
+        <button id="play-button">Play</button>
+        <img src="monkey.gif" alt="Monkey" class="animal monkey">
+    <img src="tiger.gif" alt="Tiger" class="animal tiger">
+    <img src="snake.gif" alt="Snake" class="animal snake">
+    
+    </div>
+    <div id="container">
+
+        <!-- Context Before Learning -->
+        <section id="context">
+            <div class="typewriter">
+                <h2>Oh no! You woke up in a jungle!</h2>
+              </div>
+            <p>To escape, you must learn about Generative AI on your way.<br> Keep a lookout for the wild animals!</p>
+            <button onclick="startLearning()">Start Adventure!</button>
+        </section>
+
+
+<!-- Learning Section -->
+<section id="learning-page" class="fade-in">
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="gorilla-container">
+        <img id="gorilla" src="boxinggorilla.gif" alt="Gorilla">
+        <div id="speech-bubble">
+            <h2 id="learning-title"></h2> <!-- Placeholder for the title -->
+            <p id="learning-content"></p> <!-- Placeholder for the content -->
+        </div>
+    </div>
+
+    <button id="next-button" onclick="nextLearningPage()">I understand</button>
+</section>
+
+
+        <section id="prepare-for-quiz" style="display: none;">
+            <h2 style="color: #338d54;">Now that you've gained the knowledge in the <br> knowledge jungle, it's time for the test!</h2>
+            <button id="button" onclick="preparequiz()">I'm Ready!</button>
+        </section>
+        
+        
+        <section id="drag-drop-activity" style="display: none;">
+            <div class="typewriter">
+            <h2>Match the AI Bots to Their Functions!</h2>
+            </div>
+            <div class="drag-drop-container">
+                <!-- Terms Section -->
+                <div class="terms-container">
+                    <h3>Terms</h3>
+
+                    <div class="terms">
+                        <div class="draggable" draggable="true" data-term="Generative AI">DALL·E</div>
+                        <div class="draggable" draggable="true" data-term="Dataset">ChatGPT</div>
+                        <div class="draggable" draggable="true" data-term="Bias">Jukebox AI</div>
+                    </div>
+                </div>
+            
+                <!-- Definitions Section -->
+                <div class="definitions-container">
+                    <h3>Definitions</h3>
+                    <div class="definitions">
+                        <div class="drop-zone" data-match="Generative AI">Creates images.</div>
+                        <div class="drop-zone" data-match="Dataset">Generates text</div>
+                        <div class="drop-zone" data-match="Bias">Produces music</div>
+                    </div>
+                    <img src="tiger.gif" alt="Tiger" class="animal tiger">
+        </section>
+    </div>
+
+    <div id="true-false-quiz" style="display: none;">
+        <div class="typewriter">
+        <h2>Is this True or False?</h2>
+        </div>
+        <p>Generative AI can only generate images.</p>
+        <button onclick="checkAnswer(false)">False</button>
+        <button onclick="checkAnswer(true)">True</button>
+        <img src="monkey.gif" alt="Monkey" class="animal monkey">
+        
+        
+    </div>
+
+    <!-- Multiple Choice Question (Initially Hidden) -->
+<!-- Multiple Choice Quiz Container -->
+<div id="mcq-quiz-container" class="container" style="display: none;">
+    <!-- White Container for Header and Question -->
+    <div class="header-container">
+        <!-- Heading -->
+        <h2>Multiple Choice Question</h2>
+        <!-- Question Text -->
+        <p class="question-text">Which of the following is NOT a use of Generative AI?</p>
+    </div>
+
+    <!-- Answer Options -->
+    <div class="options">
+        <button onclick="checkMCQAnswer('A')">A. Creating digital art</button>
+        <button onclick="checkMCQAnswer('B')">B. Generating text for chatbots</button>
+        <button onclick="checkMCQAnswer('C')">C. Cleaning your room</button>
+        <button onclick="checkMCQAnswer('D')">D. Composing music</button>
+    </div>
+</div>
+
+<!-- Fill in the Blanks Quiz Container (Initially Hidden) -->
+<div id="fitb-quiz-container" class="container" style="display: none;">
+    <div class="header-container">
+        <h2>Fill in the Blanks!</h2>
+        <p>Generative AI, while powerful, has its limitations. It can sometimes produce <span class="blank" ondrop="drop(event)" ondragover="allowDrop(event)"></span> content due to learning from existing data that may not always be reliable. Additionally, Generative AI lacks true <span class="blank" ondrop="drop(event)" ondragover="allowDrop(event)"></span> and generates content based on patterns, not original thought. Misuse of Generative AI can result in <span class="blank" ondrop="drop(event)" ondragover="allowDrop(event)"></span>content, so it is crucial to use it responsibly.</p>
+    </div>
+
+    <!-- Answer Cards -->
+    <div class="answer-cards">
+        <div class="card" draggable="true" ondragstart="drag(event)" id="creativity">creativity</div>
+        <div class="card" draggable="true" ondragstart="drag(event)" id="inaccurate">inaccurate</div>
+        <div class="card" draggable="true" ondragstart="drag(event)" id="harmful">harmful</div>
+    </div>
+
+    <button onclick="checkFITBAnswer()">Submit Answer</button>
+</div>
+
+<!-- Closing Page (After Successfully Completing the Quiz) -->
+<div id="closing-page" class="container" style="display: none;">
+    <div class="header-container">
+        <h2 class="congratulations">Congratulations! You've Successfully Escaped the Jungle! 🎉</h2>
+        <p class="message">You have proven your skills and made it through all the challenges!</p>
+        <button id="play-again-button" onclick="window.location.reload()">Play Again</button> <!-- Play Again Button -->
+    </div>
+</div>
+
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
